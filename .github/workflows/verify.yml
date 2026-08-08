@@ -16,13 +16,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Verify manifest and release metadata
+      - name: Extract the immutable candidate package
         run: |
+          tmp=$(mktemp -d)
+          git archive HEAD | tar -x -C "$tmp"
+          rm -rf "$tmp/.github" "$tmp/.gitignore" "$tmp/CITATION.cff" \
+            "$tmp/RELEASE_NOTES.md" "$tmp/REPLAY_CONTAINER_2026-08-08.md" \
+            "$tmp/archives"
+          echo "TXGRAFFITI_PACKAGE_ROOT=$tmp" >> "$GITHUB_ENV"
+      - name: Verify candidate manifest and release metadata
+        run: |
+          cd "$TXGRAFFITI_PACKAGE_ROOT"
           python3 check_manifest.py
           python3 check_release_metadata.py
       - name: Run theorem-critical deterministic replay
-        run: ./run_core_verification.sh
+        run: cd "$TXGRAFFITI_PACKAGE_ROOT" && ./run_core_verification.sh
       - name: Run replay with Python assertions disabled
         env:
           PYTHONOPTIMIZE: '1'
-        run: ./run_core_verification.sh
+        run: cd "$TXGRAFFITI_PACKAGE_ROOT" && ./run_core_verification.sh
