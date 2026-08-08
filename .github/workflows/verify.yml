@@ -1,0 +1,28 @@
+name: Verify candidate package
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    name: Core replay (Python 3.13)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify manifest and release metadata
+        run: |
+          python3 check_manifest.py
+          python3 check_release_metadata.py
+      - name: Run theorem-critical deterministic replay
+        run: ./run_core_verification.sh
+      - name: Run replay with Python assertions disabled
+        env:
+          PYTHONOPTIMIZE: '1'
+        run: ./run_core_verification.sh

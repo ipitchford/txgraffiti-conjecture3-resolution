@@ -1,0 +1,7 @@
+# Optional corroborative audit only. CPython 3.13, Linux x86_64.
+# Install with:
+#   python3 -m pip install --no-deps --only-binary=:all: --require-hashes -r environment/requirements-milp.lock
+numpy @ https://files.pythonhosted.org/packages/f5/10/ca162f45a102738958dcec8023062dad0cbc17d1ab99d68c4e4a6c45fb2b/numpy-2.3.5-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl \
+    --hash=sha256:11e06aa0af8c0f05104d56450d6093ee639e15f24ecf62d417329d06e522e017
+scipy @ https://files.pythonhosted.org/packages/63/1e/12fbf2a3bb240161651c94bb5cdd0eae5d4e8cc6eaeceb74ab07b12a753d/scipy-1.17.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl \
+    --hash=sha256:6680f2dfd4f6182e7d6db161344537da644d1cf85cf293f015c60a17ecf08752

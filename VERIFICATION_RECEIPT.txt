@@ -1,0 +1,77 @@
+TXGRAFFITI CONJECTURE 15/3 - RELEASE 4.0.0-rc1 VERIFICATION RECEIPT
+Recorded: 2026-08-06, Europe/London
+Status: unrefereed-candidate
+Assurance wording: all bundled theorem-critical deterministic checks passed in the recorded environment and from a clean extracted copy.
+
+EXACT RELEASE ASSURANCE
+peerReviewed=false
+internallyReplayed=true
+independentlyRerun=false
+independentlyReimplemented=false
+formallyVerified=false
+environmentDefinitionPinned=true
+containerReplayCompleted=false
+predecessorIndependentAnalysis=partial
+
+RECORDED ENVIRONMENT
+"Debian GNU/Linux 13 (trixie)"
+Python 3.13.5
+c++ (Debian 14.2.0-19) 14.2.0
+gzip 1.13
+NumPy 2.3.5
+SciPy 1.17.0
+LANG=
+LC_ALL=
+TZ=
+PYTHONHASHSEED=not_set_in_parent_shell; set to 0 in container definition
+SOURCE_DATE_EPOCH=1785974400 for PDF build
+CXXFLAGS=-std=c++20 -O3 -Wall -Wextra -Wconversion -Wshadow -pedantic
+
+CORE REPLAY
+command=./run_core_verification.sh
+exit_status=0
+raw_log=REPLAY_CORE_RAW.txt
+clean_copy_raw_log=REPLAY_CLEAN_COPY_RAW.txt
+summary:
+  graph: n=50, m=75, cubic, connected, girth=5
+  explicit independent dominating witnesses: 2, size 16
+  maximal matching witness: size 15
+  direct independent-domination optimum: 16
+  complete assignments: 32768; satisfying: 0
+  partial assignments: 14348907; bilateral: 939975; violations: 0
+  proof tree: 256714 nodes; 116229 branches; 140485 bound leaves; maximum depth 15
+  certificate regeneration: byte-identical
+  targeted corruptions rejected: 4/4
+
+OPTIONAL CORROBORATIVE AUDIT
+command=./run_optional_audits.sh
+exit_status=0
+raw_log=REPLAY_OPTIONAL_RAW.txt
+result: SciPy/HiGHS returned i(G)=16 and mu_star(G)=15 with zero reported gaps.
+This audit is not theorem-critical.
+
+CANONICAL HASHES
+1753ad874d1b09f101f06e91f7a53cfc27026fb4c1166bf7bd16269dae7fbd0f  counterexample.json
+d8b6dc5c5738ac657edfa17193363b48f9416111278e6de07246889668fcb3c6  counterexample.g6
+63363b5e9c8bdd119418024fe80da7bba36f71119f6e89778519d3fbd8a916b2  counterexample.edgelist
+a14c38f6b2f1ed9c65da3efccb60e8443b033b96f8de9cec90fb5d82d020f988  ids_le15.tree.gz
+36d1dbd0f17da59327eac7e96ab108f65d04b8b7aead46419adef6b1d4fcc54e  MANUSCRIPT.pdf
+ec0a6c4435272f630ff14f4f0b1ec8f8e09bb4010d5bcd9278ddf09eaf1b0e78  EVIDENCE_SUPPLEMENT.pdf
+412227e2f14ae4e5c3ea01fa4b41791be55122fdf01193773fe23f1f08468cf6  EXTERNAL_REVIEW_2026-08-06.md
+1bb020e35dc99e896faa1215877f1306d6400c6d901b5f8bd59f50fb8df43e96  source/newproof.zip
+
+PDF INSPECTION
+MANUSCRIPT.pdf: 9 A4 pages, fonts embedded, 28 outline items, visually inspected after rendering at 180 dpi.
+EVIDENCE_SUPPLEMENT.pdf: 5 A4 pages, fonts embedded, 20 outline items, visually inspected after rendering at 180 dpi.
+No clipping, overlap, black squares or missing glyphs were observed.
+
+ENVIRONMENT LIMITATION
+The digest-pinned container definition and hash-locked optional wheels are included. Docker/Podman was unavailable in the authoring runtime, so the container was not built here. The core proof itself has no third-party Python dependency.
+
+ARCHIVE VALIDATION
+The deterministic ZIP build was executed twice from the same source tree and produced byte-identical archives. The delivered archive was then extracted into a fresh directory. MANIFEST.sha256 passed, the complete theorem-critical replay passed, and the optional mixed-integer audit passed. The outer archive hash is recorded in the external .zip.sha256 sidecar because embedding it would create a circular dependency.
+
+SCOPE
+Fable's receipt applies to v2-theorem SHA-256 106787526e7d356d7c0535ab01c43aa7d6a1223a95fe728bba76e287aadea589.
+The supplied full review applies to v3 SHA-256 94fe632a280d0ca8d6d06ec3cf2309d07973acdac0c43c53e21c3d4191903e8f.
+Neither is an exact-v4 independent rerun.

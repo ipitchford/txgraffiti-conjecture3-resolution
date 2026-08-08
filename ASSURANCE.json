@@ -1,0 +1,58 @@
+{
+  "schema": "evidence-press/assurance/v1",
+  "release_id": "txgraffiti-c3-resolution/4.0.0-rc1",
+  "object_scope": "exact release bytes only unless a predecessor hash is stated",
+  "status": "unrefereed-candidate",
+  "peerReviewed": false,
+  "internallyReplayed": true,
+  "internallyReplayedScope": "all bundled theorem-critical deterministic checks in the recorded environment and a clean extracted copy",
+  "independentlyRerun": false,
+  "independentlyReimplemented": false,
+  "formallyVerified": false,
+  "environmentDefinitionPinned": true,
+  "containerReplayCompleted": false,
+  "environmentReproducibility": "partial",
+  "predecessorIndependentAnalysis": {
+    "state": "partial",
+    "object": "v2-theorem",
+    "archive_sha256": "106787526e7d356d7c0535ab01c43aa7d6a1223a95fe728bba76e287aadea589",
+    "receipt": "INDEPENDENT_REPLAY_FABLE.md",
+    "scope": "independent harness, re-derivation and object authentication; none of the reviewed bundle scripts executed"
+  },
+  "predecessorTechnicalReview": {
+    "state": "completed",
+    "object": "v3-merged",
+    "archive_sha256": "94fe632a280d0ca8d6d06ec3cf2309d07973acdac0c43c53e21c3d4191903e8f",
+    "receipt": "EXTERNAL_REVIEW_2026-08-06.md",
+    "recommendation": "major revisions before release",
+    "effect_on_v4": "release-hardening requirements implemented and mapped in REVIEW_RESPONSE.md",
+    "reviewer_identity": "not asserted by this package"
+  },
+  "deterministicChecks": {
+    "graphEncodingCrossCheck": "passed",
+    "explicitWitnesses": "passed",
+    "completeFormulaAssignments": 32768,
+    "partialAssignments": 14348907,
+    "proofTreeNodes": 256714,
+    "certificateRegenerationByteIdentical": true,
+    "targetedCorruptionsRejected": 4,
+    "cleanCopyReplay": true
+  },
+  "externalDependency": {
+    "claim": "restricted order-50 theorem for cubic graphs with a dominating induced matching",
+    "dependency_id": "ZPS-2024-20-CLAUSE",
+    "rederived": false,
+    "definitionTransferRecorded": true
+  },
+  "badgesAllowed": [
+    "bundled deterministic checks passed in the recorded environment",
+    "certificate-backed",
+    "unrefereed candidate"
+  ],
+  "badgesDisallowed": [
+    "independently reproduced",
+    "formally verified",
+    "peer reviewed",
+    "globally minimal counterexample"
+  ]
+}

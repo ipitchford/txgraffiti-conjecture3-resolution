@@ -1,0 +1,8 @@
+== Optional generic mixed-integer audit ==
+STRUCTURE n=50 m=75 degrees={3: 50} connected=True
+IDS optimum=16 gap=0.0 nodes=526 independent=True dominating=True witness=[5, 11, 14, 19, 21, 22, 25, 28, 30, 31, 32, 34, 35, 38, 44, 45]
+MIN_MAXIMAL_MATCHING optimum=15 gap=0.0 nodes=1 matching=[(0, 1), (2, 3), (4, 5), (6, 7), (8, 9), (10, 11), (12, 13), (14, 15), (16, 17), (18, 19), (20, 21), (22, 23), (24, 25), (26, 27), (28, 29)]
+MILP_AUDIT_PASSED result=i_16_mu_star_15
+OPTIONAL_AUDIT_PASSED scope=corroborative_milp
+
+ELAPSED=0:03.27 MAX_RSS_KB=167160

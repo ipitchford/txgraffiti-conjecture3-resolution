@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this release, cite the exact candidate version and archive DOI."
+title: "TxGraffiti Conjecture 15/3 resolution"
+version: "4.0.0-rc1"
+date-released: "2026-08-06"
+type: software
+abstract: >-
+  Certificate-backed candidate resolution of TxGraffiti Conjecture 15/3:
+  a connected cubic graph on 50 vertices with minimum maximal matching number
+  15 and independent domination number 16. The package also contains an exact
+  formula-graph identity and a conditional restricted threshold theorem.
+authors:
+  - name: "Release contributors"
+license: "CC-BY-4.0 AND MIT"
+repository-code: "https://github.com/ipitchford/txgraffiti-conjecture3-resolution"
+url: "https://github.com/ipitchford/txgraffiti-conjecture3-resolution"
+keywords:
+  - graph theory
+  - independent domination
+  - maximal matching
+  - satisfiability
+  - reproducible mathematics
+  - computer-assisted proof
+  - candidate result
+identifiers:
+  - type: url
+    value: "https://github.com/ipitchford/txgraffiti-conjecture3-resolution"

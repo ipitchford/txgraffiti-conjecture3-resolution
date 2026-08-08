@@ -1,0 +1,41 @@
+{
+  "schema": "evidence-press/external-dependencies/v1",
+  "release_id": "txgraffiti-c3-resolution/4.0.0-rc1",
+  "generated_on": "2026-08-06",
+  "dependencies": [
+    {
+      "id": "ZPS-2024-20-CLAUSE",
+      "role": "load-bearing only for the restricted order-50 DIM theorem; not needed for the counterexample",
+      "citation": "Zhang, Peitl and Szeider (2024), Small Unsatisfiable k-CNFs with Bounded Literal Occurrence",
+      "doi": "10.4230/LIPIcs.SAT.2024.31",
+      "urn": "urn:nbn:de:0030-drops-205531",
+      "official_record": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SAT.2024.31",
+      "arxiv": "2405.16149",
+      "consulted_version": "LIPIcs.SAT.2024.31, 22 pages, published 2024-08-19",
+      "accessed": "2026-08-06",
+      "licensed": "CC BY 4.0",
+      "source_definition": "A 3-clause contains exactly three distinct literals; a (3,p,q)-formula bounds positive and negative occurrences per variable by p and q.",
+      "source_result": "Table 1 gives 20 as the minimum number of clauses in an unsatisfiable (3,2,2)-formula.",
+      "definition_transfer": "THEOREM_DEPENDENCY.md",
+      "content_sha256": null,
+      "content_hash_status": "official paper bytes were not materialised in the build runtime; DOI, URN, version and access date are pinned, and the official Zenodo computational supplement is pinned by its repository-supplied MD5 checksum",
+      "rederived_in_release": false,
+      "supplement": {
+        "doi": "10.5281/zenodo.11282310",
+        "file": "supplementary_material_smallest_k_CNF.zip",
+        "size": "102.8 kB",
+        "official_checksum": "md5:a98d3544d736ccf3f23b9922100d468e",
+        "version": "v1",
+        "published": "2024-05-24"
+      }
+    },
+    {
+      "id": "DEBIAN-13.3-SLIM",
+      "role": "declarative replay base",
+      "source": "Docker Official Image",
+      "reference": "debian:13.3-slim",
+      "index_digest": "sha256:1d3c811171a08a5adaa4a163fbafd96b61b87aa871bbc7aa15431ac275d3d430",
+      "accessed": "2026-08-06"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+== Encoding consistency ==
+ENCODINGS_VERIFIED n=50 m=75 formats=formula,json,edgelist,graph6 literal_occurrences=2+2 witnesses=2
+== Formula properties ==
+FORMULA_PROPERTIES_VERIFIED
+complete_assignments=32768
+satisfying_assignments=0
+minimum_unsatisfied_clauses=1
+assignments_attaining_minimum=3318
+minimally_unsatisfiable=true deletion_witnesses=20
+simple_assignment_misses_only=C18
+== Dependency-free graph verification ==
+STRUCTURE n=50 m=75 degree=3 connected=1 girth=5
+WITNESSES independent_dominating_size=16 explicit_sets=2 verified=1
+MATCHING size=15 maximal=1 cubic_edge_domination_lower_bound=15
+DIRECT_IDS optimum=16 search_nodes=256714 seconds=0.0194402
+BILATERAL checked=14348907 bilateral=939975 violations=0 seconds=7.10387
+u bilateral_assignments minimum_residual_clauses
+0 32768 1
+1 68864 2
+2 105066 3
+3 131296 4
+4 141302 5
+5 134321 6
+6 114282 7
+7 87592 8
+8 60260 9
+9 36402 10
+10 18335 11
+11 7151 12
+12 1967 14
+13 338 16
+14 30 18
+15 1 20
+GRAPH_CHECK_PASSED result=mu_star_15_i_16
+== Proof-tree verification ==
+TREE_VERIFIED nodes=256714 branches=116229 bound_leaves=140485 cardinality_leaves=0 dead_leaves=0 max_depth=15
+TREE_CHECK_PASSED result=no_ids_size_le_15
+== Deterministic certificate regeneration ==
+CERTIFICATE_GENERATED nodes=256714 branches=116229 bound_leaves=140485 cardinality_leaves=0 dead_leaves=0
+CERTIFICATE_REPRODUCED byte_identical=1
+== Targeted checker mutations ==
+MUTATION_REJECTED name=invalid_leaf
+MUTATION_REJECTED name=invalid_witness
+MUTATION_REJECTED name=truncated
+MUTATION_REJECTED name=trailing_data
+ADVERSARIAL_TESTS passed=4 failed=0
+== Release metadata and assurance scope ==
+RELEASE_METADATA_PASSED schema=v4 assurance_scope=exact anonymity_scan=pass
+MANIFEST_CHECK skipped=1 reason=manifest_not_yet_generated
+CORE_REPLAY_PASSED scope=bundled_deterministic_checks environment=recorded
+
+ELAPSED=0:20.77 MAX_RSS_KB=196620

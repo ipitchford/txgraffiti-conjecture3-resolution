@@ -1,0 +1,40 @@
+# Declarative replay environment for release 4.0.0-rc1.
+# The base image is pinned by multi-platform index digest.
+FROM debian:13.3-slim@sha256:1d3c811171a08a5adaa4a163fbafd96b61b87aa871bbc7aa15431ac275d3d430 AS core
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    TZ=UTC \
+    PYTHONHASHSEED=0 \
+    SOURCE_DATE_EPOCH=1785974400
+
+# Exact package versions recorded from the successful Debian 13.3 environment.
+# Debian package availability remains an external repository dependency; see ENVIRONMENT.md.
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      ca-certificates=20250419 \
+      g++=4:14.2.0-1 \
+      g++-14=14.2.0-19 \
+      gzip=1.13-1 \
+      make=4.4.1-2 \
+      python3=3.13.5-1 \
+      python3-pip=25.1.1+dfsg-1 \
+      python3-venv=3.13.5-1 \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /release
+COPY . /release
+
+# The theorem-critical replay has no third-party Python dependency.
+RUN ./run_core_verification.sh
+
+# Optional MILP layer. Build with --target optional-audit to include it.
+FROM core AS optional-audit
+RUN python3 -m venv /opt/venv \
+ && /opt/venv/bin/python -m pip install --upgrade pip \
+ && /opt/venv/bin/python -m pip install --no-deps --only-binary=:all: --require-hashes \
+      -r environment/requirements-milp.lock
+ENV PATH=/opt/venv/bin:$PATH
+RUN ./run_optional_audits.sh
+CMD ["./run_verification.sh"]

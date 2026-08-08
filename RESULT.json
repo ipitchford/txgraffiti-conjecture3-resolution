@@ -1,0 +1,128 @@
+{
+  "schema": "evidence-press/mathematical-resolution/v4",
+  "release_id": "txgraffiti-c3-resolution/4.0.0-rc1",
+  "release_date": "2026-08-06",
+  "status": "unrefereed-candidate",
+  "object": {
+    "name": "TxGraffiti Conjecture 15/3",
+    "statement": "Every finite simple r-regular graph G with r>0 satisfies i(G) <= mu_star(G).",
+    "original_source": "Caro, Davila and Pepper (2022), Conjecture 15",
+    "later_source": "Davila, Brimkov and Pepper (2025), Conjecture 3"
+  },
+  "verdict": {
+    "status": "disproved_by_counterexample",
+    "counterexample_connected": true,
+    "counterexample_regular_degree": 3,
+    "counterexample_order": 50,
+    "counterexample_size": 75,
+    "independent_domination_number": 16,
+    "minimum_maximal_matching_number": 15,
+    "gap": 1
+  },
+  "canonical_documents": {
+    "paper": "MANUSCRIPT.pdf",
+    "evidence_supplement": "EVIDENCE_SUPPLEMENT.pdf",
+    "status": "STATUS.md",
+    "claim_map": "CLAIMS.json",
+    "assurance": "ASSURANCE.json"
+  },
+  "theorems": {
+    "formula_graph_identity": {
+      "statement": "For an indexed CNF F on k variables, with clauses treated as literal sets, i(G(F)) = k + beta(F), where beta is minimum bilateral deficiency.",
+      "status": "proved_in_manuscript",
+      "predecessor_independent_analysis": "re-derived by Fable on v2-theorem, not exact v4",
+      "novelty": "targeted search did not locate an equivalent published statement; no priority claim"
+    },
+    "twice_occurrence_case": {
+      "statement": "For a proper indexed 3-CNF in which every positive and negative literal occurs exactly twice, G(F) is cubic and mu_star(G(F))=k.",
+      "status": "proved_in_manuscript",
+      "prior_art": "the exact signed occurrence formula class and clause-literal architectures predate this release"
+    },
+    "restricted_dim_threshold": {
+      "statement": "Assuming the published 20-clause threshold for unsatisfiable (3,2,2)-formulas, every cubic graph with a dominating induced matching and fewer than 50 vertices satisfies i(G)<=mu_star(G).",
+      "status": "proved_conditional_on_external_dependency",
+      "external_dependency": "ZPS-2024-20-CLAUSE",
+      "definition_transfer": "THEOREM_DEPENDENCY.md",
+      "sharp_within_subclass": true,
+      "unrestricted_minimality": false
+    }
+  },
+  "proof": {
+    "mu_star_upper_witness_size": 15,
+    "mu_star_lower_bound": "75 edges / at most 5 edges dominated per selected matching edge = 15",
+    "i_upper_witness_size": 16,
+    "i_lower_certificate": {
+      "file": "ids_le15.tree.gz",
+      "format": "IDS15_TREE_V1",
+      "compressed_sha256": "a14c38f6b2f1ed9c65da3efccb60e8443b033b96f8de9cec90fb5d82d020f988",
+      "compressed_bytes": 21803,
+      "nodes": 256714,
+      "branch_nodes": 116229,
+      "bound_leaves": 140485,
+      "maximum_depth": 15,
+      "checker": "check_ids15_certificate.py",
+      "generator": "generate_ids15_certificate.cpp",
+      "deterministically_reproduced": true,
+      "targeted_mutations_rejected": 4
+    },
+    "formula_checks": {
+      "complete_assignments": 32768,
+      "satisfying_assignments": 0,
+      "minimum_unsatisfied_clauses": 1,
+      "assignments_attaining_minimum": 3318,
+      "minimally_unsatisfiable": true,
+      "partial_assignments": 14348907,
+      "bilateral_assignments": 939975,
+      "minimum_bilateral_deficiency": 1,
+      "violations": 0
+    },
+    "optional_cross_check": "generic SciPy/HiGHS MILPs return i=16 and mu_star=15 with zero reported gaps"
+  },
+  "assurance": {
+    "peerReviewed": false,
+    "internallyReplayed": true,
+    "independentlyRerun": false,
+    "independentlyReimplemented": false,
+    "formallyVerified": false,
+    "environmentDefinitionPinned": true,
+    "containerReplayCompleted": false,
+    "cleanCopyReplay": true,
+    "predecessorIndependentAnalysis": {
+      "state": "partial",
+      "archive_sha256": "106787526e7d356d7c0535ab01c43aa7d6a1223a95fe728bba76e287aadea589",
+      "receipt": "INDEPENDENT_REPLAY_FABLE.md"
+    },
+    "predecessorTechnicalReview": {
+      "archive_sha256": "94fe632a280d0ca8d6d06ec3cf2309d07973acdac0c43c53e21c3d4191903e8f",
+      "receipt": "EXTERNAL_REVIEW_2026-08-06.md",
+      "recommendation": "major revisions"
+    }
+  },
+  "audit_of_input": {
+    "file": "source/newproof.zip",
+    "sha256": "1bb020e35dc99e896faa1215877f1306d6400c6d901b5f8bd59f50fb8df43e96",
+    "exact_recurrences": "appear sound within n<=32 and m<=64",
+    "main_theoretical_error": "classified the DIM endpoint formula only as (3,4)-CNF and placed the restricted frontier at order 40 rather than 50",
+    "large_historical_enumerations_replayed": false
+  },
+  "provenance": {
+    "construction_priority_claimed": false,
+    "public_predecessor": "https://github.com/djma/TxGraffiti-conjecture3-counterexample",
+    "public_commit": "7810f30c5e9da0af9ece566bdffa5844d6b34f1b",
+    "reviewed_v3_sha256": "94fe632a280d0ca8d6d06ec3cf2309d07973acdac0c43c53e21c3d4191903e8f"
+  },
+  "limitations": [
+    "No proof of unrestricted order-50 minimality or uniqueness.",
+    "No exact-v4 independent rerun or clean-room reimplementation.",
+    "No proof-assistant formal verification or conventional peer review.",
+    "The restricted order theorem depends on an external computational threshold that is not re-derived in the release.",
+    "Targeted novelty search does not exclude unindexed or uninspected prior work.",
+    "The declarative container has not been built in the authoring environment."
+  ],
+  "core_artifact_hashes": {
+    "counterexample.json": "1753ad874d1b09f101f06e91f7a53cfc27026fb4c1166bf7bd16269dae7fbd0f",
+    "counterexample.g6": "d8b6dc5c5738ac657edfa17193363b48f9416111278e6de07246889668fcb3c6",
+    "counterexample.edgelist": "63363b5e9c8bdd119418024fe80da7bba36f71119f6e89778519d3fbd8a916b2",
+    "ids_le15.tree.gz": "a14c38f6b2f1ed9c65da3efccb60e8443b033b96f8de9cec90fb5d82d020f988"
+  }
+}

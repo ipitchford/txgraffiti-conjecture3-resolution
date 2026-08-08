@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+._*
+.verify_counterexample.tmp
+.generate_ids15_certificate.tmp
+_renders/

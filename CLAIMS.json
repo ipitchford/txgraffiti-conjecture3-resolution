@@ -1,0 +1,75 @@
+{
+  "schema": "evidence-press/claims/v1",
+  "release_id": "txgraffiti-c3-resolution/4.0.0-rc1",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The canonical graph is finite, simple, connected, cubic, has 50 vertices, 75 edges and girth 5.",
+      "status": "established_by_bundled_deterministic_checks",
+      "evidence": ["counterexample.json", "counterexample.edgelist", "counterexample.g6", "check_encodings.py"],
+      "external_dependency": null
+    },
+    {
+      "id": "C2",
+      "claim": "The minimum cardinality of a maximal matching is mu_star(G)=15.",
+      "status": "proved",
+      "evidence": ["explicit 15-edge maximal matching", "elementary 75/5 lower bound", "MANUSCRIPT.pdf"],
+      "external_dependency": null
+    },
+    {
+      "id": "C3",
+      "claim": "The graph has an independent dominating set of size 16.",
+      "status": "proved_by_explicit_witness",
+      "evidence": ["counterexample.json", "check_encodings.py", "MANUSCRIPT.pdf"],
+      "external_dependency": null
+    },
+    {
+      "id": "C4",
+      "claim": "The graph has no independent dominating set of size at most 15.",
+      "status": "certificate_checked",
+      "evidence": ["ids_le15.tree.gz", "check_ids15_certificate.py", "generate_ids15_certificate.cpp", "test_certificate_checker.py"],
+      "proof_tree_nodes": 256714,
+      "external_dependency": null
+    },
+    {
+      "id": "C5",
+      "claim": "The bilateral-deficiency route independently gives i(G)=16.",
+      "status": "proved_and_exhaustively_instantiated",
+      "evidence": ["Theorem 1 in MANUSCRIPT.pdf", "verify_counterexample.cpp"],
+      "partial_assignments_checked": 14348907,
+      "bilateral_assignments": 939975,
+      "minimum_deficiency": 1,
+      "external_dependency": null
+    },
+    {
+      "id": "C6",
+      "claim": "There exists a connected cubic graph with mu_star(G)=15<16=i(G), so the TxGraffiti regular-graph inequality is false.",
+      "status": "established",
+      "depends_on": ["C1", "C2", "C3", "C4"],
+      "external_dependency": null
+    },
+    {
+      "id": "C7",
+      "claim": "For every indexed CNF F on k variables, with clauses treated as literal sets, i(G(F))=k+beta(F).",
+      "status": "proved_in_manuscript",
+      "evidence": ["MANUSCRIPT.pdf", "small-instance tests reported in EXTERNAL_REVIEW_2026-08-06.md"],
+      "novelty": "targeted search did not locate an equivalent statement; no priority claim",
+      "external_dependency": null
+    },
+    {
+      "id": "C8",
+      "claim": "For a proper 3-CNF in which every positive and negative literal occurs exactly twice, G(F) is cubic and mu_star(G(F))=k.",
+      "status": "proved_in_manuscript",
+      "evidence": ["MANUSCRIPT.pdf"],
+      "external_dependency": null
+    },
+    {
+      "id": "C9",
+      "claim": "Every cubic graph with a dominating induced matching and fewer than 50 vertices satisfies i(G)<=mu_star(G); order 50 is sharp within this subclass.",
+      "status": "proved_conditional_on_external_threshold",
+      "evidence": ["MANUSCRIPT.pdf", "THEOREM_DEPENDENCY.md"],
+      "external_dependency": "ZPS-2024-20-CLAUSE",
+      "scope_limit": "does not establish unrestricted cubic minimality"
+    }
+  ]
+}

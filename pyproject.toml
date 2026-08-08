@@ -1,0 +1,10 @@
+[project]
+name = "txgraffiti-conjecture3-resolution"
+version = "4.0.0rc1"
+description = "Certificate-backed resolution package for TxGraffiti Conjecture 15/3"
+requires-python = ">=3.13,<3.14"
+license = {text = "MIT for original code; see LICENSE.md"}
+
+[tool.release]
+core_has_third_party_python_dependencies = false
+optional_lock = "environment/requirements-milp.lock"
