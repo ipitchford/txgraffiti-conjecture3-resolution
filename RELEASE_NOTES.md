@@ -12,6 +12,12 @@ inequality. It does **not** claim unrestricted order-50 minimality, uniqueness,
 secured theorem priority, formal verification, exact-release independent
 reproduction, or conventional peer review.
 
+## Archive DOI
+
+The exact archive is publicly deposited at
+`https://doi.org/10.5281/zenodo.21852504`; the concept DOI for the release
+lineage is `https://doi.org/10.5281/zenodo.21852503`.
+
 ## Assurance boundary
 
 The exact package is an **unrefereed candidate**. Bundled theorem-critical

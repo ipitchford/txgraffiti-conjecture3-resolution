@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this release, cite the exact candidate version and archive DOI."
 title: "TxGraffiti Conjecture 15/3 resolution"
 version: "4.0.0-rc1"
+doi: "10.5281/zenodo.21852504"
 date-released: "2026-08-06"
 type: software
 abstract: >-
@@ -23,5 +24,11 @@ keywords:
   - computer-assisted proof
   - candidate result
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21852504"
+    description: "Version DOI for the exact 4.0.0-rc1 candidate archive"
+  - type: doi
+    value: "10.5281/zenodo.21852503"
+    description: "Concept DOI for the release lineage"
   - type: url
     value: "https://github.com/ipitchford/txgraffiti-conjecture3-resolution"
